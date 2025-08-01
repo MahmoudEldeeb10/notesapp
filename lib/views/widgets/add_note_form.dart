@@ -22,6 +22,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
+      autovalidateMode: autovalidateMode,
       child: Column(
         children: [
           SizedBox(height: 30),
@@ -57,6 +58,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     BlocProvider.of<AddNoteCubit>(context).AddNote(noteModel);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
                   }
                 },
               );
